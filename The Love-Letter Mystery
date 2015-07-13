@@ -1,0 +1,40 @@
+//Question Link : https://www.hackerrank.com/challenges/the-love-letter-mystery
+
+import java.io.*;
+import java.util.*;
+import java.math.*;
+import java.text.*;
+import java.util.regex.*;
+
+class Solution{
+	public static void main(String[] args){
+		Scanner stdin = new Scanner(System.in);
+		int t = stdin.nextInt();
+		stdin.nextLine();
+		while(t>0){
+			String str1 = stdin.nextLine();
+			String str2 = new StringBuffer(str1).reverse().toString();
+			if(str1.equals(str2)){
+				System.out.println("0");
+			}
+			else{
+				char[] c1 = str1.toCharArray();
+				int j = c1.length-1;
+				int count = 0;
+				for(int i=0;i<=j;i++){
+					if(i>=j)
+						break;
+					else{	
+					if(c1[i]!=c1[j]){
+						count += Math.abs(c1[i] - c1[j]);
+					}
+					}
+					j--;
+				}
+				System.out.println(count);
+			}
+		t--;}
+		
+		}
+		
+	}
